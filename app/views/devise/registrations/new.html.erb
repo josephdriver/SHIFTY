@@ -1,29 +1,29 @@
-<div class="container login" style>
+<div class="container login login-layout" style>
   <div class="login-title">
     <h1 class="big-heading second">Shifty.</h1>
     <p class="second">Keep on top of your shifts</p>
   </div>
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= f.error_notification %>
+  <%= f.error_notification %>
 
-    <div class="form-inputs first">
-      <%= f.input :email,
-                  required: true,
-                  autofocus: true,
-                  input_html: { autocomplete: "email" }%>
-      <%= f.input :password,
-                  required: true,
-                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation,
-                  required: true,
-                  input_html: { autocomplete: "new-password" } %>
-    </div>
-
+  <div class="form-inputs first">
+    <%= f.input :email,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "email" }%>
+    <%= f.input :password,
+                required: true,
+                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                input_html: { autocomplete: "new-password" } %>
+    <%= f.input :password_confirmation,
+                required: true,
+                input_html: { autocomplete: "new-password" } %>
     <div class="form-actions login-btn-ctr">
       <%= f.button :submit, "Sign up", class: "btn-submit" %>
     </div>
+  </div>
   <% end %>
-
-  <%= render "devise/shared/links" %>
+  <div>
+    <%= render "devise/shared/links" %>
+  </div>
 </div>
